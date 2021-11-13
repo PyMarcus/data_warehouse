@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architect-project version="1.0" appversion="1.0.9">
+ <project-name>modelagemDeDados</project-name>
+ <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
+ <project-data-sources>
+  <data-source id="DS0">
+   <property key="Logical" value="PlayPen Database" />
+  </data-source>
+  <data-source id="DS2">
+   <property key="Connection Type" value="PostgreSQL" />
+   <property key="Logical" value="DW_dev" />
+   <property key="JDBC URL" value="jdbc:postgresql://192.168.2.120:5432/dw_biacademy" />
+   <property key="UID" value="biacademy" />
+   <property key="PWD" value="biacademy" />
+   <property key="ca.sqlpower.architect.etl.kettle.database" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.port" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.hostname" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.login" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.password" value="" />
+  </data-source>
+ </project-data-sources>
+ <source-databases>
+  <database id="DB0" populated="true" UUID="634ed61d-a110-44a0-b0e6-7fdc1a3272ab" dbcs-ref="DS2" name="DW_dev" physicalName="DW_dev" >
+   <catalog id="CAT1" populated="false" UUID="05ece043-9ea2-43f2-be3b-6d4166094530" name="dw_biacademy" nativeTerm="database" physicalName="dw_biacademy" >
+   </catalog>
+   <relationships>
+   </relationships>
+  </database>
+ </source-databases>
+ <target-database id="ppdb" dbcs-ref="DS0">
+  <table id="TAB3" populated="true" UUID="7ec52e06-d786-41b9-a77d-9b982fb76989" name="DimensaoCliente" objectType="TABLE" physicalName="DIM_CLIENTE" >
+   <remarks>Dimensão para cadastro dos clientes</remarks>
+   <folder id="FOLTAB31" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL4" populated="true" UUID="3c752bf4-3ebc-46e7-9e5c-33cfda19180c" autoIncrement="false" autoIncrementSequenceName="DIM_CLIENTE_SK_CLIENTE_seq" defaultValue="" name="Surrogate Key" nullable="0" physicalName="SK_CLIENTE" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Surrogate key é uma chave autoincremental
+Não reutilizar.
+Sequence.</remarks>
+    </column>
+    <column id="COL5" populated="true" UUID="a5d07091-9ee8-4784-a3d5-0c5174e60c85" autoIncrement="true" autoIncrementSequenceName="DIM_CLIENTE_NK_CLIENTE_seq" defaultValue="" name="Natural Key(Cliente)" nullable="0" physicalName="NK_CLIENTE" precision="60" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Natural key, exemplo, cpf, codigo do produto etc</remarks>
+    </column>
+    <column id="COL6" populated="true" UUID="148d46ed-694f-4bf5-98c1-f62e218fbd2e" autoIncrement="false" autoIncrementSequenceName="DIM_CLIENTE_NM_CLIENTE_seq" defaultValue="" name="Nome do Cliente" nullable="0" physicalName="NM_CLIENTE" precision="60" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome do cliente (completo)</remarks>
+    </column>
+    <column id="COL7" populated="true" UUID="695f7190-f9d7-4e4b-8815-faad6a996780" autoIncrement="false" autoIncrementSequenceName="DIM_CLIENTE_EMAIL_CLIENTE_seq" defaultValue="" name="email do Cliente" nullable="0" physicalName="EMAIL_CLIENTE" precision="60" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>email do cliente (completo)</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB33" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB32" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB34" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX8" populated="true" UUID="9e04885e-d921-4f7d-acb3-15531feae662" clustered="false" name="DIM_CLIENTE_PK" physicalName="DIM_CLIENTE_PK" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC9" populated="true" UUID="36567dc8-5339-4ec5-877f-d99d79933141" ascendingOrDescending="UNSPECIFIED" column-ref="COL4" name="Surrogate Key" physicalName="SK_CLIENTE" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB10" populated="true" UUID="becbd726-8dc6-42cd-8963-48ce945d0e5a" name="DimensaoProduto" objectType="TABLE" physicalName="DIM_PRODUTO" >
+   <remarks></remarks>
+   <folder id="FOLTAB101" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL11" populated="true" UUID="64fc6bf8-cd13-45cd-97eb-e43a6dde78b0" autoIncrement="true" autoIncrementSequenceName="DIM_PRODUTO_SK_PRODUTO_seq" defaultValue="" name="SurrogateKey (Produto)" nullable="0" physicalName="SK_PRODUTO" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>SK do produto, chave primária.
+Identificador</remarks>
+    </column>
+    <column id="COL12" populated="true" UUID="74a05be2-54dc-4f85-9360-06b1696fda42" autoIncrement="false" autoIncrementSequenceName="DIM_PRODUTO_NK_PRODUTO_seq" defaultValue="" name="Natural Key (Produto)" nullable="0" physicalName="NK_PRODUTO" precision="120" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Chave natural, o código do produto no legado</remarks>
+    </column>
+    <column id="COL13" populated="true" UUID="4ea100e5-2abf-4551-96df-044d60d75714" autoIncrement="false" autoIncrementSequenceName="DIM_PRODUTO_NM_PRODUTO_seq" defaultValue="" name="Nome do produto" nullable="0" physicalName="NM_PRODUTO" precision="60" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome do produto</remarks>
+    </column>
+    <column id="COL14" populated="true" UUID="58f05ba6-22b2-4b68-9c22-89e4cb7f938d" autoIncrement="false" autoIncrementSequenceName="DIM_PRODUTO_MARCA_PRODUTO_seq" defaultValue="" name="Marca do produto" nullable="0" physicalName="MARCA_PRODUTO" precision="60" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Marca dos produtos</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB103" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB102" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB104" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX15" populated="true" UUID="b953fcf0-9393-4498-a7bc-6a0252d4356a" clustered="false" name="DIM_PRODUTO_pk" physicalName="DIM_PRODUTO_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC16" populated="true" UUID="892797f4-fc34-4d0a-af97-fe8c6833fc98" ascendingOrDescending="UNSPECIFIED" column-ref="COL11" name="SurrogateKey (Produto)" physicalName="SK_PRODUTO" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB17" populated="true" UUID="477c888e-14b2-4856-a5a3-c137a711d6db" name="Dimensao Região" objectType="TABLE" physicalName="DIM_REGIAO" >
+   <remarks></remarks>
+   <folder id="FOLTAB171" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL18" populated="true" UUID="745600e0-799a-497a-ae34-9bcd3f9328da" autoIncrement="true" autoIncrementSequenceName="DIM_REGIAO_SK_REGIAO_seq" defaultValue="" name="Surrogate Key(REGIAO)" nullable="0" physicalName="SK_REGIAO" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Região geográfica</remarks>
+    </column>
+    <column id="COL19" populated="true" UUID="307983bc-2bcd-4010-9c97-067d368c2721" autoIncrement="false" autoIncrementSequenceName="DIM_REGIAO_NK_REGIAO_seq" defaultValue="" name="Natural Key (região)" nullable="0" physicalName="NK_REGIAO" precision="60" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>chave natural de região, por exemplo, CEP.</remarks>
+    </column>
+    <column id="COL20" populated="true" UUID="2bcc9348-2a4f-4689-aeba-b346954d2b89" autoIncrement="false" autoIncrementSequenceName="DIM_REGIAO_NM_CIDADE_seq" defaultValue="" name="NomeCidade" nullable="0" physicalName="NM_CIDADE" precision="60" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome da cidade</remarks>
+    </column>
+    <column id="COL21" populated="true" UUID="3fb1329c-79f3-4600-88b8-e177917b1675" autoIncrement="false" autoIncrementSequenceName="DIM_REGIAO_NM_UF_seq" defaultValue="" name="Nome do estado (UF)" nullable="0" physicalName="NM_UF" precision="60" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome do Estado ,abreviado</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB173" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB172" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB174" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX22" populated="true" UUID="64b30109-78ea-4860-ad8a-a45a1de3f838" clustered="false" name="DIM_REGIAO_pk" physicalName="DIM_REGIAO_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC23" populated="true" UUID="df1a0618-c322-4b29-a315-fe3628e81966" ascendingOrDescending="UNSPECIFIED" column-ref="COL18" name="Surrogate Key(REGIAO)" physicalName="SK_REGIAO" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB24" populated="true" UUID="4f41547b-21e7-4859-9dc8-d5af150abe4b" name="Fato Vendas" objectType="TABLE" physicalName="FT_VENDAS" >
+   <remarks>Não está utilizando pk na fato</remarks>
+   <folder id="FOLTAB241" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL25" populated="true" UUID="c56861ba-0fa6-424f-ba5a-ac9f7ce99574" autoIncrement="false" autoIncrementSequenceName="FT_VENDAS_VL_VENDA_seq" defaultValue="" name="Métrica - valor da venda" nullable="1" physicalName="VL_VENDA" precision="12" referenceCount="1" scale="4" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks>métrica(quantidade) de vendas
+Não aceita nulo.</remarks>
+    </column>
+    <column id="COL26" populated="true" UUID="e91549ee-039f-4075-b4c4-87a93a025d12" autoIncrement="false" autoIncrementSequenceName="FT_VENDAS_QTD_VENDIDA_seq" defaultValue="" name="Métrica quantidade vendida" nullable="0" physicalName="QTD_VENDIDA" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL27" populated="true" UUID="49dca9ea-9712-4174-addb-337821b6af50" autoIncrement="false" autoIncrementSequenceName="DIM_CLIENTE_SK_CLIENTE_seq" defaultValue="" name="Surrogate Key" nullable="0" physicalName="SK_CLIENTE" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Surrogate key é uma chave autoincremental
+Não reutilizar.
+Sequence.</remarks>
+    </column>
+    <column id="COL28" populated="true" UUID="1ff0a918-6260-4c69-9e4c-a79d97388838" autoIncrement="false" autoIncrementSequenceName="DIM_PRODUTO_SK_PRODUTO_seq" defaultValue="" name="SurrogateKey (Produto)" nullable="0" physicalName="SK_PRODUTO" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>SK do produto, chave primária.
+Identificador</remarks>
+    </column>
+    <column id="COL29" populated="true" UUID="ea444d35-97d7-4f8d-b715-79b22157f18d" autoIncrement="false" autoIncrementSequenceName="DIM_REGIAO_SK_REGIAO_seq" defaultValue="" name="Surrogate Key(REGIAO)" nullable="0" physicalName="SK_REGIAO" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Região geográfica</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB243" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB242" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB244" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX30" populated="true" UUID="b328b8a2-6a04-496f-95d9-8fa266f10452" clustered="false" name="PK_FATO_VENDAS" physicalName="PK_FATO_VENDAS" primaryKeyIndex="true" unique="false" >
+    </index>
+   </folder>
+  </table>
+  <relationships>
+   <relationship id="REL31" populated="true" UUID="3a176788-4c4e-4e59-acd8-e083da705361" deferrability="7" deleteRule="3" fk-table-ref="TAB24" fkCardinality="7" identifying="false" name="DIM_CLIENTE_FT_VENDAS_fk" physicalName="DIM_CLIENTE_FT_VENDAS_fk" pk-table-ref="TAB3" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP32" populated="true" UUID="a2b82b9f-8e17-496f-8e6a-8f5b4db167bb" fk-column-ref="COL27" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL4" />
+   </relationship>
+   <relationship id="REL33" populated="true" UUID="2fe172a0-8dab-4afd-ad17-67d78d81ef5e" deferrability="7" deleteRule="3" fk-table-ref="TAB24" fkCardinality="7" identifying="false" name="DIM_PRODUTO_FT_VENDAS_fk" physicalName="DIM_PRODUTO_FT_VENDAS_fk" pk-table-ref="TAB10" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP34" populated="true" UUID="e2b3c977-f060-47a8-ac19-ecb1e547c6d2" fk-column-ref="COL28" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL11" />
+   </relationship>
+   <relationship id="REL35" populated="true" UUID="08d98a47-676a-478c-8957-f989968e6668" deferrability="7" deleteRule="3" fk-table-ref="TAB24" fkCardinality="7" identifying="false" name="DIM_REGIAO_FT_VENDAS_fk" physicalName="DIM_REGIAO_FT_VENDAS_fk" pk-table-ref="TAB17" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP36" populated="true" UUID="cca19054-23ad-4804-9b02-4da3a0fdc45e" fk-column-ref="COL29" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL18" />
+   </relationship>
+  </relationships>
+ </target-database>
+ <ddl-generator type="ca.sqlpower.architect.ddl.GenericDDLGenerator" allow-connection="true"> </ddl-generator>
+ <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
+ <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
+ <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="false" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+  <table-pane table-ref="TAB3" x="264" y="110" bgColor="0xe4e4b8" fgColor="0xcc0000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB10" x="983" y="129" bgColor="0xeeeeee" fgColor="0x206cff" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB17" x="631" y="549" bgColor="0xeeeeee" fgColor="0xec7000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB24" x="627" y="273" bgColor="0xc7d0df" fgColor="0x0000cc" rounded="false" dashed="false"/>
+  <table-link relationship-ref="REL31" pkConnection="0.8344827586206897" fkConnection="0.20146520146520147" rLineColor="0xf7f7f7" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL33" pkConnection="0.1715210355987055" fkConnection="0.8526315789473684" rLineColor="0xf7f7f7" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL35" pkConnection="0.5092250922509225" fkConnection="0.4631578947368421" rLineColor="0xf7f7f7" pkLabelText="" fkLabelText="" orientation="72"/>
+ </play-pen>
+ <critic-manager>
+  <critic-grouping platformType="Generic" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PrimaryKeyCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.RelationshipMappingTypeCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.EmptyRelationshipCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericSequenceNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetDefaultOnColumnWithNoDefaultCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetNullOnNonNullableColumnCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DuplicateNameCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="DB2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DB2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="H2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.H2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="HSQLDB" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.HSQLDBUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="MySQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLCommentCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="Oracle" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OraclePhysicalNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="PostgreSQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PostgreSQLReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerUnsupportedFeaturesCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2000" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2000UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2005" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2005UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+ </critic-manager>
+ <profiles topNCount="10">
+  </profiles>
+  <olap>
+  </olap>
+  <olap-gui>
+  </olap-gui>
+</architect-project>
