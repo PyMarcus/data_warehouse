@@ -1,0 +1,372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+        <style>
+      .table {
+        background-color:#F5F5FF;
+        border-left:4px solid gray;
+        border-bottom:4px solid gray;
+        border-top:4px solid gray;
+        border-right:4px solid gray;
+        margin-bottom:3em;
+        margin-left:2em;
+        margin-right:2em;
+        padding:1em;
+      }
+      .tableNameHeading h1 {
+          display: inline;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-size:125%;
+        font-weight:bold;
+      }
+        
+      .tableNameHeading h2 {
+        display: inline;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-size:115%;
+        font-weight:normal;
+      }
+      
+      .tableComment { 
+        background-color:#e4efff; margin-bottom:20px;
+      }
+      
+      .tableDefinition { 
+        padding:2px;
+        border-collapse:collapse;
+        margin-top:1em;
+      }
+
+      .tdTableDefinition {
+        padding-right:10px;
+        vertical-align:top;
+        border-top:1px solid #C0C0C0;
+      }
+
+      .tdLogicalColName {
+        width:20em;
+      }
+      
+      .tdPhysicalColName {
+        width:20em;
+      }
+      
+      .tdDataType {
+        width:10em;
+      }
+
+      .tdPkFlag {
+        width:4em;
+      }
+
+      .tdNullFlag {
+        width:9em;
+      }
+
+      .tdTableHeading {
+        padding:2px;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-weight: bold;
+        vertical-align:top;
+        border-bottom: 1px solid #C0C0C0;
+        background-color: rgb(240,240,240);
+      }
+      
+      .subTitle {
+        font-family: Segoe UI, Arial, sans-serif;
+        font-weight: bold;
+      }
+
+      .references {
+      }
+      .comment {
+        color:#666666;
+        margin-left:3em;
+        padding:0.25em;
+      }
+    </style>
+        <title>modelagemDeDados</title>
+    </head>
+    <body>
+        <center>
+            <h2>modelagemDeDados</h2>
+        </center>
+        <h3>List of tables</h3>
+        <ul>
+            <li>
+                <a href="#DimensaoCliente">DimensaoCliente</a>
+            </li>
+            <li>
+                <a href="#DimensaoProduto">DimensaoProduto</a>
+            </li>
+            <li>
+                <a href="#Dimensao Regi%C3%A3o">Dimensao Regi&atilde;o</a>
+            </li>
+            <li>
+                <a href="#Fato Vendas">Fato Vendas</a>
+            </li>
+        </ul>
+        <div class="tableNameHeading">
+            <h1>
+                DimensaoCliente<a name="DimensaoCliente"></a>
+            </h1>
+            <h2>
+      (Physical Name: DIM_CLIENTE)
+      </h2>
+            <p class="comment">Dimens&atilde;o para cadastro dos clientes</p>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">Surrogate Key (PK)</td><td class="tdTableDefinition">SK_CLIENTE</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">
+                            Surrogate key &eacute; uma chave autoincremental
+                            <br>
+                            N&atilde;o reutilizar.
+                            <br>
+                            Sequence.
+                        </div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">Natural Key(Cliente)</td><td class="tdTableDefinition">NK_CLIENTE</td><td class="tdTableDefinition">VARCHAR(60)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Natural key, exemplo, cpf, codigo do produto etc</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">Nome do Cliente</td><td class="tdTableDefinition">NM_CLIENTE</td><td class="tdTableDefinition">VARCHAR(60)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Nome do cliente (completo)</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">email do Cliente</td><td class="tdTableDefinition">EMAIL_CLIENTE</td><td class="tdTableDefinition">VARCHAR(60)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">email do cliente (completo)</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">Referenced By</p>
+                <ul>
+                    <li>
+                        <a href="#Fato Vendas">Fato Vendas</a> referencing (Surrogate Key)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tableNameHeading">
+            <h1>
+                DimensaoProduto<a name="DimensaoProduto"></a>
+            </h1>
+            <h2>
+      (Physical Name: DIM_PRODUTO)
+      </h2>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">SurrogateKey (Produto) (PK)</td><td class="tdTableDefinition">SK_PRODUTO</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">
+                            SK do produto, chave prim&aacute;ria.
+                            <br>
+                            Identificador
+                        </div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">Natural Key (Produto)</td><td class="tdTableDefinition">NK_PRODUTO</td><td class="tdTableDefinition">VARCHAR(120)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Chave natural, o c&oacute;digo do produto no legado</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">Nome do produto</td><td class="tdTableDefinition">NM_PRODUTO</td><td class="tdTableDefinition">VARCHAR(60)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Nome do produto</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">Marca do produto</td><td class="tdTableDefinition">MARCA_PRODUTO</td><td class="tdTableDefinition">VARCHAR(60)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Marca dos produtos</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">Referenced By</p>
+                <ul>
+                    <li>
+                        <a href="#Fato Vendas">Fato Vendas</a> referencing (SurrogateKey (Produto))
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tableNameHeading">
+            <h1>
+                Dimensao Regi&atilde;o<a name="Dimensao Regi%C3%A3o"></a>
+            </h1>
+            <h2>
+      (Physical Name: DIM_REGIAO)
+      </h2>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">Surrogate Key(REGIAO) (PK)</td><td class="tdTableDefinition">SK_REGIAO</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Regi&atilde;o geogr&aacute;fica</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">Natural Key (regi&atilde;o)</td><td class="tdTableDefinition">NK_REGIAO</td><td class="tdTableDefinition">VARCHAR(60)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">chave natural de regi&atilde;o, por exemplo, CEP.</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">NomeCidade</td><td class="tdTableDefinition">NM_CIDADE</td><td class="tdTableDefinition">VARCHAR(60)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Nome da cidade</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">Nome do estado (UF)</td><td class="tdTableDefinition">NM_UF</td><td class="tdTableDefinition">VARCHAR(60)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Nome do Estado ,abreviado</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">Referenced By</p>
+                <ul>
+                    <li>
+                        <a href="#Fato Vendas">Fato Vendas</a> referencing (Surrogate Key(REGIAO))
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tableNameHeading">
+            <h1>
+                Fato Vendas<a name="Fato Vendas"></a>
+            </h1>
+            <h2>
+      (Physical Name: FT_VENDAS)
+      </h2>
+            <p class="comment">N&atilde;o est&aacute; utilizando pk na fato</p>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">M&eacute;trica - valor da venda</td><td class="tdTableDefinition">VL_VENDA</td><td class="tdTableDefinition">NUMERIC(12,4)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">
+                            m&eacute;trica(quantidade) de vendas
+                            <br>
+                            N&atilde;o aceita nulo.
+                        </div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">M&eacute;trica quantidade vendida</td><td class="tdTableDefinition">QTD_VENDIDA</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">Surrogate Key
+                &nbsp;(<a href="#DimensaoCliente">FK</a>)
+              </td><td class="tdTableDefinition">SK_CLIENTE</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">
+                            Surrogate key &eacute; uma chave autoincremental
+                            <br>
+                            N&atilde;o reutilizar.
+                            <br>
+                            Sequence.
+                        </div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">SurrogateKey (Produto)
+                &nbsp;(<a href="#DimensaoProduto">FK</a>)
+              </td><td class="tdTableDefinition">SK_PRODUTO</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">
+                            SK do produto, chave prim&aacute;ria.
+                            <br>
+                            Identificador
+                        </div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">Surrogate Key(REGIAO)
+                &nbsp;(<a href="#Dimensao Regi%C3%A3o">FK</a>)
+              </td><td class="tdTableDefinition">SK_REGIAO</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Regi&atilde;o geogr&aacute;fica</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">References</p>
+                <ul>
+                    <li>
+                        <a href="#DimensaoCliente">DimensaoCliente</a> through (Surrogate Key)
+                    </li>
+                    <li>
+                        <a href="#DimensaoProduto">DimensaoProduto</a> through (SurrogateKey (Produto))
+                    </li>
+                    <li>
+                        <a href="#Dimensao Regi%C3%A3o">Dimensao Regi&atilde;o</a> through (Surrogate Key(REGIAO))
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
